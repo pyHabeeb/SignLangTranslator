@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Language Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Sign Language Translator</h2>
+
+<a href="/logout">Logout</a>
+
+<br><br>
+
+<!-- CAMERA -->
+<video id="video" width="500" height="380" autoplay playsinline></video>
+<canvas id="canvas" style="display:none;"></canvas>
+
+<br><br>
+
+<h3>Detected Text</h3>
+
+<textarea id="outputText" rows="4" cols="50" placeholder="Detected words will appear here..."></textarea>
+
+<br><br>
+
+<button onclick="copyText()">Copy Text</button>
+<button onclick="clearText()">Clear</button>
+
+<br><br>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

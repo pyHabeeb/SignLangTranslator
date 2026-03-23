@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+form {
+    background: white;
+    color: black;
+    width: 300px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 95%;
+    padding: 10px;
+    background: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #2e59d9;
+}
+
+a {
+    color: yellow;
+    text-decoration: none;
+}
+
+video {
+    width: 450px;
+    border: 5px solid white;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#output {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: yellow;
+}
+
+.logout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: r
