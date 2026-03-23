@@ -2,3 +2,6 @@ flask
 opencv-python
 numpy
 torch
+mediapipe
+joblib
+base64
