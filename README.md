@@ -141,16 +141,3 @@ If no hand is detected:
 - This is an academic/demo project and currently stores passwords in plaintext. For production, use password hashing (`werkzeug.security`) and stronger auth/session settings.
 - Flask debug mode is enabled in `backend/app.py` for development.
 
-## Future Improvements
-
-- Add password hashing and auth hardening
-- Improve UI/UX and responsive design
-- Expand dataset and labels for better accuracy
-- Add confidence scores and sentence-level smoothing
-
----
-
-If you publish this on GitHub, you can also add screenshots/GIFs of:
-1. Login page
-2. Dashboard webcam detection
-3. Output translation area
