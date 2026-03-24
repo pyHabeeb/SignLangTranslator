@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Language Translator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-<h2>Sign Language Translator</h2>
+<main class="page-shell">
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">Realtime AI Assistant</p>
+            <h1>Sign Language Translator</h1>
+        </div>
+        <a class="logout-link" href="/logout">Logout</a>
+    </header>
 
-<a href="/logout">Logout</a>
+    <section class="dashboard-grid">
+        <article class="camera-card">
+            <h2>Live Camera Feed</h2>
+            <p class="subtitle">Keep your hand centered in frame for better detection.</p>
+            <div class="video-wrap">
+                <video id="video" width="500" height="380" autoplay playsinline></video>
+                <canvas id="canvas" style="display:none;"></canvas>
+            </div>
+        </article>
 
-<br><br>
+        <article class="output-card">
+            <h2>Detected Text</h2>
+            <p class="subtitle">Newly recognized words are appended automatically.</p>
 
-<!-- CAMERA -->
-<video id="video" width="500" height="380" autoplay playsinline></video>
-<canvas id="canvas" style="display:none;"></canvas>
+            <textarea id="outputText" rows="5" placeholder="Detected words will appear here..."></textarea>
 
-<br><br>
-
-<h3>Detected Text</h3>
-
-<textarea id="outputText" rows="4" cols="50" placeholder="Detected words will appear here..."></textarea>
-
-<br><br>
-
-<button onclick="copyText()">Copy Text</button>
-<button onclick="clearText()">Clear</button>
-
-<br><br>
+            <div class="action-row">
+                <button onclick="copyText()">Copy Text</button>
+                <button class="secondary" onclick="clearText()">Clear</button>
+            </div>
+        </article>
+    </section>
+</main>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
