@@ -1,70 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --paper: #f6f2ea;
+    --paper-soft: #fffdf9;
+    --ink: #1f2329;
+    --ink-muted: #5d656f;
+    --line: #ded6c7;
+    --accent: #146b66;
+    --accent-hover: #0f5753;
+    --secondary: #ece6d9;
+    --shadow-soft: 0 16px 40px rgba(31, 35, 41, 0.1);
+    --shadow-card: 0 10px 28px rgba(31, 35, 41, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #4e73df, #1cc88a);
     margin: 0;
-    padding: 0;
-    text-align: center;
-    color: white;
+    min-height: 100vh;
+    font-family: 'Work Sans', sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(20, 107, 102, 0.12), transparent 35%),
+        radial-gradient(circle at 90% 10%, rgba(205, 178, 134, 0.22), transparent 38%),
+        linear-gradient(150deg, var(--paper-soft) 0%, var(--paper) 100%);
+    animation: fadeIn 500ms ease;
 }
 
-h2 {
-    margin-top: 30px;
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    letter-spacing: 0.2px;
 }
 
-form {
-    background: white;
-    color: black;
-    width: 300px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-button {
-    width: 95%;
-    padding: 10px;
-    background: #4e73df;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #2e59d9;
+p {
+    margin: 0;
 }
 
 a {
-    color: yellow;
+    color: var(--accent);
     text-decoration: none;
 }
 
-video {
-    width: 450px;
-    border: 5px solid white;
+a:hover {
+    text-decoration: underline;
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+}
+
+button,
+input,
+textarea {
+    font-family: 'Work Sans', sans-serif;
+}
+
+button {
+    border: 0;
     border-radius: 10px;
-    margin-top: 20px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 150ms ease, background-color 150ms ease;
 }
 
-#output {
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+button.secondary {
+    background: var(--secondary);
+    color: var(--ink);
+}
+
+button.secondary:hover {
+    background: #e0d8c9;
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fffefb;
+    color: var(--ink);
+    font-size: 15px;
+    padding: 12px 14px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid rgba(20, 107, 102, 0.18);
+    outline-offset: 1px;
+    border-color: var(--accent);
+}
+
+/* Auth pages */
+.auth-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px;
+}
+
+.auth-panel {
+    width: min(100%, 460px);
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(222, 214, 199, 0.8);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    padding: 34px 30px;
+    animation: riseIn 480ms ease;
+}
+
+.auth-panel h1 {
+    font-size: clamp(30px, 4vw, 38px);
+    line-height: 1.1;
+}
+
+.auth-form {
+    margin-top: 24px;
+    display: grid;
+    gap: 14px;
+}
+
+.auth-form label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-muted);
+}
+
+.auth-form button {
+    margin-top: 8px;
+    padding: 13px 18px;
+}
+
+.auth-footnote {
+    margin-top: 20px;
+    color: var(--ink-muted);
+    font-size: 14px;
+}
+
+/* Dashboard */
+.page-shell {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 26px 20px 40px;
+}
+
+.topbar {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 26px;
+    animation: riseIn 480ms ease;
+}
+
+.topbar h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 1.05;
+}
+
+.logout-link {
+    align-self: center;
+    font-weight: 600;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #fffdf8;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 20px;
+}
+
+.camera-card,
+.output-card {
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(222, 214, 199, 0.9);
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    animation: riseIn 540ms ease;
+}
+
+.camera-card h2,
+.output-card h2 {
     font-size: 28px;
-    font-weight: bold;
-    margin-top: 20px;
-    color: yellow;
 }
 
-.logout {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: r
+.video-wrap {
+    margin-top: 16px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    background: #0f1318;
+}
+
+#video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#outputText {
+    margin-top: 16px;
+    min-height: 170px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.action-row {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.action-row button {
+    flex: 1;
+    padding: 12px 14px;
+}
+
+@media (max-width: 980px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .auth-shell {
+        padding: 18px;
+    }
+
+    .auth-panel {
+        padding: 26px 20px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .logout-link {
+        align-self: flex-start;
+    }
+
+    .camera-card,
+    .output-card {
+        padding: 16px;
+    }
+
+    .camera-card h2,
+    .output-card h2 {
+        font-size: 24px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes riseIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
