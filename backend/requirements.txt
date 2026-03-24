@@ -1,7 +1,7 @@
 flask
 opencv-python
 numpy
-torch
-mediapipe
+mediapipe==0.10.9
 joblib
-base64
+pandas
+scikit-learn
